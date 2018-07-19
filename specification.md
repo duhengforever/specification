@@ -37,7 +37,8 @@
 ## 3 Message Model
 ### 3.1 Message Type
 #### 3.1.1 Bytes Message
-    A message that contains a stream of uninterpreted bytes. This message type is for literally encoding a body to match an existing message format. In many cases, it will be possible to use one of
+    A message that contains a stream of uninterpreted bytes. This message type is for literally encoding a body to match  
+    an existing message format. In many cases, it will be possible to use one of
 
 #### 3.1.2 File Message
 
@@ -46,9 +47,11 @@
 
 ### 3.2 Message Format
 #### 3.2.1 System Header
-    All messages support the same set of header fields, and these header fields are used by system, which are usually used for such as identify and route messages.
+    All messages support the same set of header fields, and these header fields are used by system, which are usually   
+    used for such as identify and route messages.
 #### 3.2.2 User Header
-    In addition to the system header, messages provide a built-in user header for adding optional header fields to a message, and these attributes are represented as key-value forms.
+    In addition to the system header, messages provide a built-in user header for adding optional header fields to a    
+    message, and these attributes are represented as key-value forms.
 #### 3.3.3 Message Body
     Message body support three types of message body defined in the [sector 3.1](#31Message Type)
 ### 3.3 Message System Header
@@ -73,8 +76,10 @@
 #### 3.3.10 Timeout
     Timeout:
 #### 3.3.11 Priority
-    OMS defines a ten level priority value with 1 as the lowest priority and 10 as the highest, and the default priority is 5. The priority beyond this region will be ignored.
-    OMS does not require or provide any guarantee that the message should be delivered  in priority order strictly, but the vendor should provide a best effort to deliver expedited messages ahead of normal messages.
+    OMS defines a ten level priority value with 1 as the lowest priority and 10 as the highest, and the default priority  
+    is 5. The priority beyond this region will be ignored.
+    OMS does not require or provide any guarantee that the message should be delivered  in priority order strictly, but 
+    the vendor should provide a best effort to deliver expedited messages ahead of normal messages.
 #### 3.3.12 Reliability
     
 #### 3.3.13 SearchKey

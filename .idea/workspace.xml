@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="95e6f4b1-5a56-4ac9-9056-ef22235375d6" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/smartfox/common_info.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/smartfox/common_info.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/specification.md" beforeDir="false" afterPath="$PROJECT_DIR$/specification.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,8 +48,8 @@
         <entry file="file://$PROJECT_DIR$/specification.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="440">
-                <caret line="79" column="21" lean-forward="true" selection-start-line="79" selection-start-column="21" selection-end-line="79" selection-end-column="21" />
+              <first_editor relative-caret-position="253">
+                <caret line="39" column="122" selection-start-line="39" selection-start-column="122" selection-end-line="39" selection-end-column="122" />
               </first_editor>
               <second_editor />
             </state>
@@ -180,12 +179,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1531807682493</updated>
-      <workItem from="1531807684201" duration="15314000" />
+      <workItem from="1531807684201" duration="15557000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15314000" />
+    <option name="totallyTimeSpent" value="15557000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -252,8 +251,8 @@
     <entry file="file://$PROJECT_DIR$/specification.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="440">
-            <caret line="79" column="21" lean-forward="true" selection-start-line="79" selection-start-column="21" selection-end-line="79" selection-end-column="21" />
+          <first_editor relative-caret-position="253">
+            <caret line="39" column="122" selection-start-line="39" selection-start-column="122" selection-end-line="39" selection-end-column="122" />
           </first_editor>
           <second_editor />
         </state>
