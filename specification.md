@@ -27,9 +27,9 @@
    Queue: an administered object that encapsulates the identity of a message destination.
 ### 2.3 Messaging Quality of Service
 #### 2.3.1 Delivery Semantics
-   At least once: a message will be consumed at least once,
-   At most once: a message will be consumed at most once, in this semantics, messages may be lost.
-   Exactly once: a message will be consumed once and only once.
+   At least once: a message will be consumed at least once.  
+   At most once: a message will be consumed at most once, in this semantics, messages may be lost.  
+   Exactly once: a message will be consumed once and only once.  
 #### 2.3.2 Queue Ordering
 #### 2.3.3 Durability
 
@@ -37,23 +37,16 @@
 ## 3 Message Model
 ### 3.1 Message Type
 #### 3.1.1 Bytes Message
-   A message that contains a stream of uninterpreted bytes. This message type is for literally encoding a body to match  
-   an existing message format. In many cases, it will be possible to use one of
-
-#### 3.1.2 File Message
-
-#### 3.1.3 TextMessage
+   A message that contains a stream of uninterpreted bytes. This message type is for literally encoding a body to match an existing message format.
+#### 3.1.2 TextMessage
    A message whose body contains a java.lang.String.
-
 ### 3.2 Message Format
 #### 3.2.1 System Header
-   All messages support the same set of header fields, and these header fields are used by system, which are usually   
-   used for such as identify and route messages.
+   All messages support the same set of header fields, and these header fields are used by system, which are usually used for such as identify and route messages.
 #### 3.2.2 User Header
-   In addition to the system header, messages provide a built-in user header for adding optional header fields to a    
-   message, and these attributes are represented as key-value forms.
+   In addition to the system header, OMS provide a built-in user header for adding optional header fields to a message, and these attributes are represented as key-value forms.
 #### 3.3.3 Message Body
-   Message body support three types of message body defined in the [sector 3.1](#31Message Type)
+   Message body support two types of message body defined in the [sector 3.1](#31Message Type)
 ### 3.3 Message System Header
 #### 3.3.1 MessageId
    MessageId: unique identifier for a message.
@@ -79,13 +72,20 @@
    OMS defines a ten level priority value with 1 as the lowest priority and 10 as the highest, and the default priority is 5. The priority beyond this region will be ignored.
    OMS does not require or provide any guarantee that the message should be delivered  in priority order strictly, but the vendor should provide a best effort to deliver expedited messages ahead of normal messages.
 #### 3.3.12 Reliability
-   OMS defines two modes of message delivery:
+   OMS defines two modes of message delivery:  
    PERSISTENT, the persistent mode instructs the vendor should provide stable storage to ensure the message won't be lost.
    NON_PERSISTENT, this mode does not require the message be logged to stable storage, in most cases, the memory storage is enough for better performance and lower cost.
 #### 3.3.13 SearchKey
+   The keyword indexes will be built by the search keys, users can query similar messages through these indexes and have a quick response.
 #### 3.3.14 ScheduleExpression
+   The message will be delivered by the specified SCHEDULE_EXPRESSION, which is a [CRON expression](https://en.wikipedia.org/wiki/Cron#CRON_expression).
 #### 3.3.15 TraceId
+   This identifier represents a global and unique identification, to associate key events in the whole lifecycle of a message,
+   like sent by who, stored at where, and received by who. And, the messaging system only plays exchange role in a distributed system in most cases,
+   so the TraceID can be used to trace the whole call link with other parts in the whole system.
 #### 3.3.16 CompressionLevel
+   In BytesMessage, the body is just a byte array, may be compressed and uncompressed, and this field represents the message body compress level, 0 represents uncompress, 
+   but vendors are free to choose the compression algorithm and define compression levels, but they must ensure that the decompressed message is delivered to the user.
 ## 4 OMS Interface
 ### 4.1 MessagingAccessPoint
 #### 4.1.1 URI Schema
