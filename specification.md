@@ -32,8 +32,6 @@
    **Exactly once**: a message will be consumed once and only once.  
 #### 2.3.2 Queue Ordering
 #### 2.3.3 Durability
-
-
 ## 3 Message Model
 ### 3.1 Message Type
 #### 3.1.1 Bytes Message
@@ -46,7 +44,7 @@
 #### 3.2.2 User Header
    In addition to the system header, OMS provide a built-in user header for adding optional header fields to a message, and these attributes are represented as key-value forms.
 #### 3.3.3 Message Body
-   Message body support two types of message body defined in the [sector 3.1](##31Message Type)
+   OMS provides two forms of message defined in the [sector 3.1](##31Message Type) and this field contains the user's business data.
 ### 3.3 Message System Header
 #### 3.3.1 MessageId
    An unique identifier for a message.
@@ -55,26 +53,26 @@
 #### 3.3.3 Queue
    An identity of a message physical destination.
 #### 3.3.4 BornTimestamp
-   The timestamp of the birth of the message.
+   The timestamp of the birth of the message. When a message is sent, this field will be set with current timestamp as the born timestamp of a message in client side.
 #### 3.3.5 BornHost
-   The host that generated this message.
+   The host that generated this message. When a message is sent, this field will be set with the local host info of server.
 #### 3.3.6 StoreTimestamp
-   The timestamp stored by the broker.
+   The timestamp stored by the broker. when a message is stored by server, this field will be set with current timestamp of server.
 #### 3.3.7 StoreHost
-   The address of the broker that stores the message.
+   The host info of the server that stores this message. when a message is stored by server, this field will be set with the host info of server.
 #### 3.3.8 StartTime
    The startup timestamp that a message can be delivered to consumer client.
 #### 3.3.9 StopTime
    The stop timestamp that a message should be discarded after this timestamp.
 #### 3.3.10 Timeout
-   It represents a message time-to-live value. 
+   It represents a message time-to-live value. If the this field is specified as zero, that indicates the message does not expire, and this field has higher priority than START_TIME/STOP_TIME header fields.
 #### 3.3.11 Priority
    OMS defines a ten level priority value with 1 as the lowest priority and 10 as the highest, and the default priority is 5. The priority beyond this region will be ignored.
    OMS does not require or provide any guarantee that the message should be delivered  in priority order strictly, but the vendor should provide a best effort to deliver expedited messages ahead of normal messages.
 #### 3.3.12 Reliability
    OMS defines two modes of message delivery:  
-   **PERSISTENT**, the persistent mode instructs the vendor should provide stable storage to ensure the message won't be lost.  
-   **NON_PERSISTENT**, this mode does not require the message be logged to stable storage, in most cases, the memory storage is enough for better performance and lower cost.  
+   **PERSISTENT**: the persistent mode instructs the vendor should provide stable storage to ensure the message won't be lost.  
+   **NON_PERSISTENT**: this mode does not require the message be logged to stable storage, in most cases, the memory storage is enough for better performance and lower cost.  
 #### 3.3.13 SearchKey
    The keyword indexes will be built by the search keys, users can query similar messages through these indexes and have a quick response.
 #### 3.3.14 ScheduleExpression
@@ -87,9 +85,11 @@
    In BytesMessage, the body is just a byte array, may be compressed and uncompressed, and this field represents the message body compress level, 0 represents uncompress, 
    but vendors are free to choose the compression algorithm and define compression levels, but they must ensure that the decompressed message is delivered to the user.
 ## 4 OMS Interface
+   The oms class provides some static methods to create a MessagingAccessPoint from the specified OMS driver url and some useful util methods.
 ### 4.1 MessagingAccessPoint
-
+   An instance obtained from OMS, which is capable of creating Producer, Consumer, ResourceManager and other facility entities.
 #### 4.1.1 URI Schema
+
 ### 4.2 ResourceManager
 ### 4.3 Producer
 ### 4.4 Consumer
