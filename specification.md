@@ -18,18 +18,18 @@
 ## 2 Model Components
 ### 2.1 Topic Pub/Sub
 #### 2.1.1 Topic
-   Topic: an administered object that encapsulates the identity of a message destination for pub/sub messaging.
+   An administered object that encapsulates the identity of a message destination for pub/sub messaging.
 #### 2.1.2 Publisher
-   Publisher: an object that sending a message to all subscribers of a topic.
+   An object that sending a message to all subscribers of a topic.
 #### 2.1.3 Subscriber
-   Subscriber: an object that is used for receiving messages sent to a topic.
+   An object that is used for receiving messages sent to a topic.
 ### 2.2 Queue
-   Queue: an administered object that encapsulates the identity of a message destination.
+   An administered object that encapsulates the identity of a message destination.
 ### 2.3 Messaging Quality of Service
 #### 2.3.1 Delivery Semantics
-   At least once: a message will be consumed at least once.  
-   At most once: a message will be consumed at most once, in this semantics, messages may be lost.  
-   Exactly once: a message will be consumed once and only once.  
+   **At least once**: a message will be consumed at least once.  
+   **At most once**: a message will be consumed at most once, in this semantics, messages may be lost.  
+   **Exactly once**: a message will be consumed once and only once.  
 #### 2.3.2 Queue Ordering
 #### 2.3.3 Durability
 
@@ -46,35 +46,35 @@
 #### 3.2.2 User Header
    In addition to the system header, OMS provide a built-in user header for adding optional header fields to a message, and these attributes are represented as key-value forms.
 #### 3.3.3 Message Body
-   Message body support two types of message body defined in the [sector 3.1](#31Message Type)
+   Message body support two types of message body defined in the [sector 3.1](##31Message Type)
 ### 3.3 Message System Header
 #### 3.3.1 MessageId
-   MessageId: unique identifier for a message.
+   An unique identifier for a message.
 #### 3.3.2 Topic
-   Topic: the identity of a message logic destination.
+   An identity of a message logic destination.
 #### 3.3.3 Queue
-   Queue: the identity of a message physical destination.
+   An identity of a message physical destination.
 #### 3.3.4 BornTimestamp
-   BornTimestamp: the timestamp of the birth of the message.
+   The timestamp of the birth of the message.
 #### 3.3.5 BornHost
-   BornHost: the host that generated this message.
+   The host that generated this message.
 #### 3.3.6 StoreTimestamp
-   StoreTimestamp: timestamp stored by the broker.
+   The timestamp stored by the broker.
 #### 3.3.7 StoreHost
-   StoreHost: the address of the broker that stores the message.
+   The address of the broker that stores the message.
 #### 3.3.8 StartTime
-   StartTime: the startup timestamp that a message can be delivered to consumer client.
+   The startup timestamp that a message can be delivered to consumer client.
 #### 3.3.9 StopTime
-   StopTime: the stop timestamp that a message should be discarded after this timestamp.
+   The stop timestamp that a message should be discarded after this timestamp.
 #### 3.3.10 Timeout
-   Timeout:
+   It represents a message time-to-live value. 
 #### 3.3.11 Priority
    OMS defines a ten level priority value with 1 as the lowest priority and 10 as the highest, and the default priority is 5. The priority beyond this region will be ignored.
    OMS does not require or provide any guarantee that the message should be delivered  in priority order strictly, but the vendor should provide a best effort to deliver expedited messages ahead of normal messages.
 #### 3.3.12 Reliability
    OMS defines two modes of message delivery:  
-   PERSISTENT, the persistent mode instructs the vendor should provide stable storage to ensure the message won't be lost.
-   NON_PERSISTENT, this mode does not require the message be logged to stable storage, in most cases, the memory storage is enough for better performance and lower cost.
+   **PERSISTENT**, the persistent mode instructs the vendor should provide stable storage to ensure the message won't be lost.  
+   **NON_PERSISTENT**, this mode does not require the message be logged to stable storage, in most cases, the memory storage is enough for better performance and lower cost.  
 #### 3.3.13 SearchKey
    The keyword indexes will be built by the search keys, users can query similar messages through these indexes and have a quick response.
 #### 3.3.14 ScheduleExpression
@@ -88,6 +88,7 @@
    but vendors are free to choose the compression algorithm and define compression levels, but they must ensure that the decompressed message is delivered to the user.
 ## 4 OMS Interface
 ### 4.1 MessagingAccessPoint
+
 #### 4.1.1 URI Schema
 ### 4.2 ResourceManager
 ### 4.3 Producer
