@@ -85,19 +85,19 @@
    In BytesMessage, the body is just a byte array, may be compressed and uncompressed, and this field represents the message body compress level, 0 represents uncompress, 
    but vendors are free to choose the compression algorithm and define compression levels, but they must ensure that the decompressed message is delivered to the user.
 ## 4 OMS Interface
-   The oms class provides some static methods to create a MessagingAccessPoint from the specified OMS driver url and some useful util methods.
+   The oms class provides some static methods to create a _MessagingAccessPoint_ from the specified OMS driver url and some useful util methods.
 ![OMS](assets/images/spec/oms.png)
 ### 4.1 MessagingAccessPoint
-   An instance obtained from OMS, which is capable of creating Producer, Consumer, ResourceManager and other facility entities.
+   An instance obtained from  _OMS_, which is capable of creating _Producer_, _Consumer_, _ResourceManager_ and other facility entities.
 #### 4.1.1 URI Schema
    The Connection String describes the details to connect a specific OMS service provider, more details please refer to this [doc](https://github.com/openmessaging/specification/blob/master/oms_access_point_schema.md).
 ### 4.2 ResourceManager
-   This interface is to provide a unified interface of resource management, allowing developers to manage the namespace, queue and routing resources.
+   This interface which created by _MessagingAccessPoint_ aims to provide a unified interface of resource management, allowing developers to manage the namespace, queue and routing resources.
 ### 4.3 Producer
-   A simple object created by MessagingAccessPoint that is used for sending messages on behalf of MessagingAccessPoint.
+   A simple object created by _MessagingAccessPoint_ that is used for sending messages on behalf of _MessagingAccessPoint_.
 ### 4.4 Consumer
-   A simple object created by MessagingAccessPoint that is used for receiving messages sent to a topic, and OMS provides three forms of consumer:  
-   **PullConsumer**: a consumer which receives messages in using of long polling mechanism，and it also supports submit the consume result by acknowledgement. 
+   A simple object created by _MessagingAccessPoint_ that is used for receiving messages sent to a topic, and _OMS_ provides three forms of consumer:   
+   **PullConsumer**: a consumer which receives messages in using of long polling mechanism，and it also supports submit the consume result by acknowledgement.   
    **PushConsumer**: a consumer which receives messages from multiple queues, these messages are pushed from server.  
    **StreamingConsumer**: a consumer which can open multiple streams from a specified queue and then retrieve messages from them.  
 ### 4.5 Interceptor
