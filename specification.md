@@ -35,7 +35,7 @@
 ## 3 Message Model
 ### 3.1 Message Type
 #### 3.1.1 Bytes Message
-   A message that contains a stream of uninterpreted bytes. This message type is for literally encoding a body to match an existing message format.
+   A message that whose body contains a stream of uninterpreted bytes. This message type is for literally encoding a body to match an existing message format.
 #### 3.1.2 TextMessage
    A message whose body contains a java.lang.String.
 ### 3.2 Message Format
@@ -44,7 +44,7 @@
 #### 3.2.2 User Header
    In addition to the system header, OMS provide a built-in user header for adding optional header fields to a message, and these attributes are represented as key-value forms.
 #### 3.3.3 Message Body
-   OMS provides two forms of message defined in the [sector 3.1](##31Message Type) and this field contains the user's business data.
+   This field contains the user's business data.  
 ### 3.3 Message System Header
 #### 3.3.1 MessageId
    An unique identifier for a message.
