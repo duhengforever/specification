@@ -52,7 +52,7 @@ Please see http://openmessaging.cloud/.
 
 
 # Proposal
-#### [specification](specification.md)
+#### [specification](specification-schema.md)
 #### [use case](usecase.md)
 
 

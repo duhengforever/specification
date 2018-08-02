@@ -3,10 +3,15 @@
 ## License
 ## 0 Overview
 ### 0.1 What is OpenMessaging?
+   OpenMessaging is a cloud-oriented, vendor-neutral open standard for distributed messaging.
 ### 0.2 Why OpenMessaging?
+   Messaging and Streaming products have been widely used in modern architecture and data processing, for decoupling, 
+   queuing, buffering, ordering, replicating, etc. But when data transfers across different messaging and streaming platforms, 
+   the compatibility problem arises, which always means much additional work. Although JMS was a good solution during the past 
+   decade, it is limited in java environment, lacks specified guidelines for load balance/fault-tolerance, administration, 
+   security, and streaming feature, which make it not good at satisfying modern cloud-oriented messaging and streaming applications.
 ### 0.3 OpenMessaging Terminologies
 ### 0.4 Difference between AMQP, COBAR & JMS
-
 ## 1 OMS Architecture
 ### 1.1 OMS Ecosystem
 #### 1.1.1 Connector
@@ -14,7 +19,6 @@
 ##### 1.1.1.2 Sink
 #### 1.1.2 Router
 #### 1.1.3 Replicator
-
 ## 2 Model Components
 ### 2.1 Topic Pub/Sub
 #### 2.1.1 Topic
@@ -36,8 +40,7 @@
 ### 3.1 Message Type
 #### 3.1.1 Bytes Message
    A message that whose body contains a stream of uninterpreted bytes. This message type is for literally encoding a body to match an existing message format.
-#### 3.1.2 TextMessage
-   A message whose body contains a java.lang.String.
+   It will be use one of self-defining message types to encode the message body, and users are responsible for decode these bytes in a custom rules. 
 ### 3.2 Message Format
 #### 3.2.1 System Header
    All messages support the same set of header fields, and these header fields are used by system, which are usually used for such as identify and route messages.
@@ -102,6 +105,7 @@
    **StreamingConsumer**: a consumer which can open multiple streams from a specified queue and then retrieve messages from them.  
 ### 4.5 Interceptor
 #### 4.5.1 Producer Interceptor
+   It can be used to intercept message send operation, and view 
 #### 4.5.2 Producer Interceptor Points
 #### 4.5.3 Consumer Interceptor
 #### 4.5.4 Consumer Interceptor Points
