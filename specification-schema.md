@@ -127,13 +127,13 @@
    
 #### 2.3.8 StartTime
    - Type: `Long` 
-   - Description: The startup timestamp that a message can be delivered to consumer client. It is represented as a long value which is defined as the difference, measured in milliseconds, between this time and midnight, January 1, 1970 UTC.
+   - Description: This field represents the start timestamp of which the message can be delivered to consumer. It is represented as a long value which is defined as the difference, measured in milliseconds, between this time and midnight, January 1, 1970 UTC.
    If this field isn't set explicitly, use `BornTimestamp` as the startup timestamp. 
    - Constraints: OPTIONAL
    
 #### 2.3.9 StopTime
    - Type: `Long` 
-   - Description: This field means that a message discarded time, if an undelivered message's stop time is reached, the message should be destroyed. If an earlier timestamp is set than `StartTime` or isn't set explicitly, that means the message does not expire.
+   - Description: This field represents the discard time of the message, if an undelivered message's stop time is reached, the message should be destroyed. If an earlier timestamp is set than `StartTime` or isn't set explicitly, that means the message does not expire.
    It is represented as a long value which is defined as the difference, measured in milliseconds, between this time and midnight, January 1, 1970 UTC.
    - Constraints: OPTIONAL
    
