@@ -69,7 +69,7 @@
 #### 2.2.1 Credential
    - Type: `KeyValue`  
    - Description: In order to   
-   - Constraints: REQUIRED
+   - Constraints: OPTIONAL
    
 #### 2.2.2 System Header
    - Type: `KeyValue`  
@@ -87,103 +87,103 @@
    - Constraints: OPTIONAL
    
 ### 2.3 Message System Header
-#### 2.3.1 MessageId
+#### 2.3.1 messageId
    - Type: `String`  
    - Description: An unique identifier for a message.  When a message is sent, MessageId is ignored. When the send method returns it contains a provider-assigned value.
    - Constraints: REQUIRED and MUST be a non-empty string.
    
-#### 2.3.2 Topic
+#### 2.3.2 topic
    - Type: `String`   
    - Description: An identity of a message logic destination.
    - Constraints: REQUIRED and MUST be a non-empty string.
    
-#### 2.3.3 Queue
+#### 2.3.3 queue
    - Type: `String`   
    - Description: An identity of a message physical destination.
    - Constraints: REQUIRED and MUST be a non-empty string.
    
-#### 2.3.4 BornTimestamp
+#### 2.3.4 bornTimestamp
    - Type: `Long` 
    - Description: The timestamp of the birth of the message. It is represented as a long value which is defined as the difference, measured in milliseconds, between this time and midnight, January 1, 1970 UTC.
    It is not the time the message was actually transmitted because the actual send may occur later due to transactions or other client side queueing of messages.  
    When a message is sent, BornTimestamp is ignored. When the send method returns, the field contains a time value somewhere in the interval between the call and the return.
    - Constraints: REQUIRED 
    
-#### 2.3.5 BornHost
+#### 2.3.5 bornHost
    - Type: `String` 
    - Description: When a message is sent, this field will be set with the local host info of producer.
    - Constraints: REQUIRED and MUST be a non-empty string.
    
-#### 2.3.6 StoreTimestamp
+#### 2.3.6 storeTimestamp
    - Type: `Long` 
    - Description: The timestamp stored by server.  It is represented as a long value which is defined as the difference, measured in milliseconds, between this time and midnight, January 1, 1970 UTC.
    when a message is stored by server, this field will be set with the current timestamp of server.
    - Constraints: REQUIRED 
    
-#### 2.3.7 StoreHost
+#### 2.3.7 storeHost
    - Type: `String`
    - Description: The host info of the server that stores this message. when a message is stored by server, this field will be set with the host info of server.
    - Constraints: REQUIRED
    
-#### 2.3.8 StartTime
+#### 2.3.8 startTime
    - Type: `Long` 
    - Description: This field represents the start timestamp of which the message can be delivered to consumer. It is represented as a long value which is defined as the difference, measured in milliseconds, between this time and midnight, January 1, 1970 UTC.
-   If this field isn't set explicitly, use `BornTimestamp` as the startup timestamp. 
+   If this field isn't set explicitly, use `bornTimestamp` as the startup timestamp. 
    - Constraints: OPTIONAL
    
-#### 2.3.9 StopTime
+#### 2.3.9 stopTime
    - Type: `Long` 
    - Description: This field represents the discard time of the message, if an undelivered message's stop time is reached, the message should be destroyed. If an earlier timestamp is set than `StartTime` or isn't set explicitly, that means the message does not expire.
    It is represented as a long value which is defined as the difference, measured in milliseconds, between this time and midnight, January 1, 1970 UTC.
    - Constraints: OPTIONAL
    
-#### 2.3.10 Timeout
+#### 2.3.10 timeout
    - Type: `Long` 
    - Description: It represents a message time-to-live value. If the this field is specified as zero, that indicates the message does not expire, and this field has higher priority than START_TIME/STOP_TIME header fields.
    It is represented as a long value which is defined as the difference, measured in milliseconds, between this time and midnight, January 1, 1970 UTC.
    - Constraints: OPTIONAL
    
-#### 2.3.11 Priority
+#### 2.3.11 priority
    - Type: `Integer`
    - Description: OMS defines a ten level priority value with 1 as the lowest priority and 10 as the highest, and the default priority is 5. The priority beyond this region will be ignored.
    OMS does not require or provide any guarantee that the message should be delivered  in priority order strictly, but the vendor should provide a best effort to deliver expedited messages ahead of normal messages.
    - Constraints: OPTIONAL
    
-#### 2.3.12 Reliability
+#### 2.3.12 reliability
    - Type: `Integer`
    - Description: OMS defines two modes of message delivery:  
    **PERSISTENT**: when this field value is set with 0, the persistent mode instructs the vendor should provide stable storage to ensure the message won't be lost.  
    **NON_PERSISTENT**: when this field value is set with 1, this mode does not require the message be logged to stable storage, in most cases, the memory storage is enough for better performance and lower cost.  
    - Constraints: OPTIONAL
    
-#### 2.3.13 SearchKey
+#### 2.3.13 searchKey
    - Type: `String`
    - Description: The keyword indexes will be built by the search keys, users can query similar messages through these indexes and have a quick response.
    - Constraints: OPTIONAL
 
-#### 2.3.14 ScheduleExpression
+#### 2.3.14 scheduleExpression
    - Type: `String`
    - Description: The message will be delivered by the specified SCHEDULE_EXPRESSION, which is a [CRON expression](https://en.wikipedia.org/wiki/Cron#CRON_expression).
    When this filed isn't set explicitly, this means this message should be delivered immediately.
    - Constraints: OPTIONAL
    
-#### 2.3.15 TraceId
+#### 2.3.15 traceId
    - Type: `String`
    - Description: This identifier represents a global and unique identification, to associate key events in the whole lifecycle of a message,
    like sent by who, stored at where, and received by who. And, the messaging system only plays exchange role in a distributed system in most cases,
    so the TraceID can be used to trace the whole call link with other parts in the whole system.
    - Constraints: OPTIONAL
    
-#### 2.3.16 CompressionLevel
+#### 2.3.16 compressionLevel
    - Type: `Integer`
    - Description: This field represents the message body compress level, 0 represents uncompress, 
    but vendors are free to choose the compression algorithm and define compression levels, but they must ensure that the decompressed message is delivered to the user.
    - Constraints: OPTIONAL
 
-#### 2.3.17 TransactionId
+#### 2.3.17 transactionId
    - Type: `String`
    - Description: This field is used in transactional message, and it can be used to trace a transaction, 
-   so the same `TransactionId` will be appeared not only in prepare message, but also in commit message, and consumer received message also contains this field.
+   so the same `transactionId` will be appeared not only in prepare message, but also in commit message, and consumer received message also contains this field.
    - Constraints: OPTIONAL
 
 
@@ -193,4 +193,31 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
 be interpreted as described in [RFC 2119](https://tools.ietf.org/html/rfc2119).
 ## Appendix 
 ### Example of OpenMessaging API
+```json
+{
+    "messages": {
+        "message": {
+           "sysHeaders": {
+               "messageId": "1234-123-456",
+               "topic":"test",
+               "queue":1,
+               "bornTimestamp": 123456789012,
+               "bornHost": "172.24.0.101",
+               "storeTimestamp": 123456789013,
+               "storeHost": "172.24.0.102",
+               "timeout": 123456789999,
+               "priority": 1,
+               "traceId": "1234-123456-1",
+               "transactionId": "5566-123456-1",
+               "searchKey": "hello",
+               "reliability":1
+            },
+            "userHeaders": {
+               "service":"helloService"
+            },
+            "bodies": {}
+        }
+    }
+}
+```
 ### Change History

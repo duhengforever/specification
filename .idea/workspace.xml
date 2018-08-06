@@ -52,8 +52,8 @@
         <entry file="file://$PROJECT_DIR$/specification-schema.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="361">
-                <caret line="85" column="57" selection-start-line="85" selection-start-column="49" selection-end-line="85" selection-end-column="57" />
+              <first_editor relative-caret-position="398">
+                <caret line="202" column="25" lean-forward="true" selection-start-line="202" selection-start-column="25" selection-end-line="202" selection-end-column="25" />
               </first_editor>
               <second_editor />
             </state>
@@ -72,12 +72,17 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="landscape-0.2.0-alpha.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/images/landscape-0.2.0-alpha.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
       <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="628">
-                <caret line="40" column="33" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="33" />
+              <first_editor relative-caret-position="145">
+                <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="49" selection-end-column="3" />
               </first_editor>
               <second_editor />
             </state>
@@ -94,7 +99,20 @@
           <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
+      <file leaf-file-name="domain-design-0.1.0-alpha.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/images/domain-design-0.1.0-alpha.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>#### 3.</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>#### 2.</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -117,9 +135,11 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="width" value="1440" />
-    <option name="height" value="900" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="x" value="1440" />
+    <option name="y" value="-180" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -239,15 +259,15 @@
       <option name="presentableId" value="Default" />
       <updated>1531807682493</updated>
       <workItem from="1531807684201" duration="26889000" />
-      <workItem from="1533016022690" duration="48981000" />
+      <workItem from="1533016022690" duration="55562000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75870000" />
+    <option name="totallyTimeSpent" value="82451000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
+    <frame x="1440" y="-180" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -263,7 +283,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.07796852" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.171459" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -330,29 +350,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/oms_access_point_schema.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/images/spec/oms.png">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/images/landscape-0.1.0-alpha.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="628">
-            <caret line="40" column="33" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="33" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/specification.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
@@ -363,6 +362,33 @@
           <second_editor />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oms_access_point_schema.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="145">
+            <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="49" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/images/landscape-0.2.0-alpha.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/images/landscape-0.1.0-alpha.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/images/domain-design-0.1.0-alpha.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/usecase.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
@@ -377,8 +403,8 @@
     <entry file="file://$PROJECT_DIR$/specification-schema.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="361">
-            <caret line="85" column="57" selection-start-line="85" selection-start-column="49" selection-end-line="85" selection-end-column="57" />
+          <first_editor relative-caret-position="398">
+            <caret line="202" column="25" lean-forward="true" selection-start-line="202" selection-start-column="25" selection-end-line="202" selection-end-column="25" />
           </first_editor>
           <second_editor />
         </state>
