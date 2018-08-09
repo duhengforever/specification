@@ -9,12 +9,20 @@
 ## 0 Overview
 ### 0.1 What is OpenMessaging?
    OpenMessaging is a cloud-oriented, vendor-neutral open standard for distributed messaging.
+   
 ### 0.2 Why OpenMessaging?
+#### 0.2.1 Goals
    Messaging and Streaming products have been widely used in modern architecture and data processing, for decoupling, 
    queuing, buffering, ordering, replicating, etc. But when data transfers across different messaging and streaming platforms, 
    the compatibility problem arises, which always means much additional work. Although JMS was a good solution during the past 
    decade, it is limited in java environment, lacks specified guidelines for load balance/fault-tolerance, administration, 
    security, and streaming feature, which make it not good at satisfying modern cloud-oriented messaging and streaming applications.
+#### 0.2.1 Non-Goals
+   The following will not be part of the specification:
+   Language-specific runtime APIs   
+   Benchmark Interface for evaluating performance   
+   Connector Interface for data stream exchange with other systems   
+
 ### 0.3 OpenMessaging Terminologies
 #### 0.3.1 Topic
    An administered object that encapsulates the identity of a message destination for messaging.
@@ -35,7 +43,6 @@
 #### 0.3.6 Queue Ordering
 #### 0.3.7 Durability
 ### 0.4 Difference between AMQP, COBAR & JMS
-
 ## 1 Type System
   The following abstract data types are available for use in attributes.
   
@@ -114,7 +121,7 @@
    - Type: `Long` 
    - Description: The timestamp of the birth of the message.  
    It is not the time the message was actually transmitted because the actual send may occur later due to transactions or other client side queueing of messages.   
-   When a message is sent, BornTimestamp is ignored. When the send method returns, the field contains a time value somewhere in the interval between the call and the return.   
+   When a message is sent, `bornTimestamp` is ignored. When the send method returns, the field contains a time value somewhere in the interval between the call and the return.   
    It is represented as a long value which is defined as the difference, measured in milliseconds, between this time and midnight, January 1, 1970 UTC.
    - Constraints: REQUIRED 
    
