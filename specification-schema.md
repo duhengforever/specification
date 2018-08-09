@@ -68,7 +68,7 @@
    In the OpenMessaging, a message consists of five parts: the version, the credential, the system header, the user header and the message body.
 #### 2.2.1 version
    - Type: `String`  
-   - Description: The version of the message format. 
+   - Description: The version of this message schema. 
    - Constraints: REQUIRED 
    
 #### 2.2.2 credential
@@ -79,7 +79,8 @@
    
 #### 2.2.3 systemHeader
    - Type: `KeyValue`  
-   - Description: All messages support the same set of header fields, and these header fields are used by system, which are usually used for such as identify and route messages.  
+   - Description: All messages support the same set of header fields, and these header fields are used by system, which are usually used for such as identify and route messages.
+    Specific fields can be found in the next [chapter](#2.3-message-system-header).
    - Constraints: REQUIRED
    
 #### 2.2.4 userHeader
@@ -92,15 +93,7 @@
    - Description: This field is the part of transmitted data that is the actual intended message contains application data.   
    The message body is completely transparent to the server, the server cannot view or modify the message body.  
    - Constraints: OPTIONAL
-### 2.3 Message  Credential 
-####2.3.1 accountId
-   - Type: `String`  
-   - Description: 
-   - Constraints: OPTIONAL
-####2.3.2 accessKey
-   - Type: `String`  
-   - Description: 
-   - Constraints: OPTIONAL
+   
 ### 2.3 Message System Header
 #### 2.3.1 messageId
    - Type: `String`  
@@ -204,10 +197,21 @@
    so the same `transactionId` will be appeared not only in prepare message, but also in commit message, and consumer received message also contains this field.
    - Constraints: OPTIONAL
    
+### 2.4 Message  Credential 
+#### 2.4.1 accountId
+   - Type: `String`  
+   - Description: 
+   - Constraints: OPTIONAL
+#### 2.4.2 accessKey
+   - Type: `String`  
+   - Description: 
+   - Constraints: OPTIONAL
+   
 ### Notational Conventions
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
 "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to
 be interpreted as described in [RFC 2119](https://tools.ietf.org/html/rfc2119).
+
 ## Appendix 
 ### Example of OpenMessaging API
 ```json
