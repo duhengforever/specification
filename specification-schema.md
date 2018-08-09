@@ -18,7 +18,7 @@
    decade, it is limited in java environment, lacks specified guidelines for load balance/fault-tolerance, administration, 
    security, and streaming feature, which make it not good at satisfying modern cloud-oriented messaging and streaming applications.
 #### 0.2.1 Non-Goals
-   The following will not be part of the specification:
+   The following will not be part of the specification:   
    Language-specific runtime APIs   
    Benchmark Interface for evaluating performance   
    Connector Interface for data stream exchange with other systems   
