@@ -52,8 +52,8 @@
         <entry file="file://$PROJECT_DIR$/specification-schema.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="360">
-                <caret line="20" column="58" selection-start-line="20" selection-start-column="58" selection-end-line="20" selection-end-column="58" />
+              <first_editor relative-caret-position="-31">
+                <caret line="125" column="60" lean-forward="true" selection-start-line="125" selection-start-column="60" selection-end-line="125" selection-end-column="60" />
               </first_editor>
               <second_editor />
             </state>
@@ -109,9 +109,11 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>#### 3.</find>
+      <find>OMS</find>
     </findStrings>
     <replaceStrings>
       <replace>#### 2.</replace>
+      <replace>OpenMessaging</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -257,12 +259,12 @@
       <option name="presentableId" value="Default" />
       <updated>1531807682493</updated>
       <workItem from="1531807684201" duration="26889000" />
-      <workItem from="1533016022690" duration="63669000" />
+      <workItem from="1533016022690" duration="67478000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90558000" />
+    <option name="totallyTimeSpent" value="94367000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -281,7 +283,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.0937053" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.043633763" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -401,8 +403,8 @@
     <entry file="file://$PROJECT_DIR$/specification-schema.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="360">
-            <caret line="20" column="58" selection-start-line="20" selection-start-column="58" selection-end-line="20" selection-end-column="58" />
+          <first_editor relative-caret-position="-31">
+            <caret line="125" column="60" lean-forward="true" selection-start-line="125" selection-start-column="60" selection-end-line="125" selection-end-column="60" />
           </first_editor>
           <second_editor />
         </state>
