@@ -25,7 +25,7 @@
 #### 0.3.3 Consumer
    An object that is used for receiving messages sent to a topic.
    
-### 0.3.4 Queue
+#### 0.3.4 Queue
    An administered object that encapsulates the identity of a message destination.
    
 #### 0.3.5 Delivery Semantics
@@ -34,7 +34,6 @@
    **Exactly once**: a message will be consumed once and only once.  
 #### 0.3.6 Queue Ordering
 #### 0.3.7 Durability
-
 ### 0.4 Difference between AMQP, COBAR & JMS
 
 ## 1 Type System
@@ -43,12 +42,13 @@
   - `String` - Sequence of printable Unicode characters.
   - `Binary` - Sequence of bytes.
   - `KeyValue` - `String`-indexed dictionary of `Object`-typed values
-  - `Object` - Either a `String`, or a `Binary`, or a `KeyValue`, or a `Numeric`
   - `Numeric`:    
+        - `Short` - Integer in the range -(2^15) to 2^15 - 1 inclusive.
         - `Integer` - Integer in the range -(2^31) to 2^31 - 1 inclusive.  
         - `Long` - Integer in the range -(2^63) to 2^63 - 1 inclusive.  
         - `Float` - A 32-bit floating point number (binary32 [IEEE754](http://ieeexplore.ieee.org/servlet/opac?punumber=4610933)).  
         - `Double` - A 64-bit floating point number (binary64 [IEEE754](http://ieeexplore.ieee.org/servlet/opac?punumber=4610933)).  
+  - `Object` - Either a `String`, or a `Binary`, or a `KeyValue`, or a `Numeric`
   - `URI` - String expression conforming to `URI-reference`
     as defined in
     [RFC 3986 §4.1](https://tools.ietf.org/html/rfc3986#section-4.1).
@@ -62,62 +62,78 @@
 ### 2.1 Message Type
 #### 2.1.1 Bytes Message
    A message that whose body contains a stream of uninterpreted bytes. This message type is for literally encoding a body to match an existing message format.
-   It will be use one of self-defining message types to encode the message body, and users are responsible for decode these bytes in a custom rules. 
+   It will be use one of self-defining message types to encode the message body, and vendors are responsible for decode these bytes in a custom rules. 
 
 ### 2.2 Message Format
-
-#### 2.2.1 Credential
+   In the OpenMessaging, a message consists of five parts: the version, the credential, the system header, the user header and the message body.
+#### 2.2.1 version
+   - Type: `String`  
+   - Description: The version of the message format. 
+   - Constraints: REQUIRED 
+   
+#### 2.2.2 credential
    - Type: `KeyValue`  
-   - Description: In order to   
+   - Description: A [credential](https://en.wikipedia.org/wiki/Credential) is an attestation of qualification, competence, or authority issued to an individual by a third party with a relevant or authority or assumed competence to do so.  
+   In OpenMessaging, it's represented the authority to receive a message.
    - Constraints: OPTIONAL
    
-#### 2.2.2 System Header
+#### 2.2.3 systemHeader
    - Type: `KeyValue`  
    - Description: All messages support the same set of header fields, and these header fields are used by system, which are usually used for such as identify and route messages.  
    - Constraints: REQUIRED
    
-#### 2.2.3 User Header
+#### 2.2.4 userHeader
    - Type: `KeyValue`  
    - Description: In addition to the system header, OMS provides a built-in user header for adding optional header fields to a message, and these attributes are represented as key-value forms.
    - Constraints: REQUIRED
    
-#### 2.2.4 Message Body
+#### 2.2.5 body
    - Type: `Binary`  
-   - Description: The field that contains user's business data.  
+   - Description: This field is the part of transmitted data that is the actual intended message contains application data.   
+   The message body is completely transparent to the server, the server cannot view or modify the message body.  
    - Constraints: OPTIONAL
-   
+### 2.3 Message  Credential 
+####2.3.1 accountId
+   - Type: `String`  
+   - Description: 
+   - Constraints: OPTIONAL
+####2.3.2 accessKey
+   - Type: `String`  
+   - Description: 
+   - Constraints: OPTIONAL
 ### 2.3 Message System Header
 #### 2.3.1 messageId
    - Type: `String`  
    - Description: An unique identifier for a message.  When a message is sent, MessageId is ignored. When the send method returns it contains a provider-assigned value.
-   - Constraints: REQUIRED and MUST be a non-empty string.
+   - Constraints: REQUIRED and MUST be a non-empty `String`.
    
 #### 2.3.2 topic
    - Type: `String`   
    - Description: An identity of a message logic destination.
-   - Constraints: REQUIRED and MUST be a non-empty string.
+   - Constraints: REQUIRED and MUST be a non-empty `String`.
    
 #### 2.3.3 queue
    - Type: `String`   
    - Description: An identity of a message physical destination.
-   - Constraints: REQUIRED and MUST be a non-empty string.
+   - Constraints: REQUIRED and MUST be a non-empty `String`.
    
 #### 2.3.4 bornTimestamp
    - Type: `Long` 
-   - Description: The timestamp of the birth of the message. It is represented as a long value which is defined as the difference, measured in milliseconds, between this time and midnight, January 1, 1970 UTC.
-   It is not the time the message was actually transmitted because the actual send may occur later due to transactions or other client side queueing of messages.  
-   When a message is sent, BornTimestamp is ignored. When the send method returns, the field contains a time value somewhere in the interval between the call and the return.
+   - Description: The timestamp of the birth of the message.  
+   It is not the time the message was actually transmitted because the actual send may occur later due to transactions or other client side queueing of messages.   
+   When a message is sent, BornTimestamp is ignored. When the send method returns, the field contains a time value somewhere in the interval between the call and the return.   
+   It is represented as a long value which is defined as the difference, measured in milliseconds, between this time and midnight, January 1, 1970 UTC.
    - Constraints: REQUIRED 
    
 #### 2.3.5 bornHost
    - Type: `String` 
    - Description: When a message is sent, this field will be set with the local host info of producer.
-   - Constraints: REQUIRED and MUST be a non-empty string.
+   - Constraints: REQUIRED and MUST be a non-empty `String`.
    
 #### 2.3.6 storeTimestamp
    - Type: `Long` 
-   - Description: The timestamp stored by server.  It is represented as a long value which is defined as the difference, measured in milliseconds, between this time and midnight, January 1, 1970 UTC.
-   when a message is stored by server, this field will be set with the current timestamp of server.
+   - Description: The timestamp stored by server. when a message is stored by server, this field will be set with the current timestamp of server.  
+   It is represented as a long value which is defined as the difference, measured in milliseconds, between this time and midnight, January 1, 1970 UTC.
    - Constraints: REQUIRED 
    
 #### 2.3.7 storeHost
@@ -127,21 +143,23 @@
    
 #### 2.3.8 startTime
    - Type: `Long` 
-   - Description: This field represents the start timestamp of which the message can be delivered to consumer. It is represented as a long value which is defined as the difference, measured in milliseconds, between this time and midnight, January 1, 1970 UTC.
-   If this field isn't set explicitly, use `bornTimestamp` as the startup timestamp. 
+   - Description: This field represents the start timestamp of which the message can be delivered to consumer.   
+   If this field isn't set explicitly, use `bornTimestamp` as the startup timestamp.  
+   It is represented as a long value which is defined as the difference, measured in milliseconds, between this time and midnight, January 1, 1970 UTC.
    - Constraints: OPTIONAL
    
 #### 2.3.9 stopTime
    - Type: `Long` 
-   - Description: This field represents the discard time of the message, if an undelivered message's stop time is reached, the message should be destroyed. If an earlier timestamp is set than `StartTime` or isn't set explicitly, that means the message does not expire.
+   - Description: This field represents the discard time of the message, if an undelivered message's stop time is reached, the message should be destroyed. If an earlier timestamp is set than `startTime` or isn't set explicitly, that means the message does not expire.  
    It is represented as a long value which is defined as the difference, measured in milliseconds, between this time and midnight, January 1, 1970 UTC.
    - Constraints: OPTIONAL
    
 #### 2.3.10 timeout
    - Type: `Long` 
-   - Description: It represents a message time-to-live value. If the this field is specified as zero, that indicates the message does not expire, and this field has higher priority than START_TIME/STOP_TIME header fields.
-   It is represented as a long value which is defined as the difference, measured in milliseconds, between this time and midnight, January 1, 1970 UTC.
+   - Description: It represents a message time-to-live value. If the this field is specified as zero, that indicates the message does not expire, and this field has higher priority than `startTime/stopTime` header fields.  
+   Compared with the field `stopTime`, this field represents the relative time from the `startTime` to the present, when the clock is not synchronized in the distributed system, this field is used to control whether a message should be expires.    
    - Constraints: OPTIONAL
+   
    
 #### 2.3.11 priority
    - Type: `Integer`
@@ -185,8 +203,7 @@
    - Description: This field is used in transactional message, and it can be used to trace a transaction, 
    so the same `transactionId` will be appeared not only in prepare message, but also in commit message, and consumer received message also contains this field.
    - Constraints: OPTIONAL
-
-
+   
 ### Notational Conventions
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
 "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to
@@ -197,6 +214,11 @@ be interpreted as described in [RFC 2119](https://tools.ietf.org/html/rfc2119).
 {
     "messages": {
         "message": {
+           "version":"0.0.1",
+           "credential":{
+               "accountId":"123456789",
+               "accessKey":"123456789"
+           },
            "sysHeaders": {
                "messageId": "1234-123-456",
                "topic":"test",
