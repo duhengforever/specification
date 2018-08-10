@@ -42,8 +42,8 @@
         <entry file="file://$PROJECT_DIR$/specification-schema.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="268">
-                <caret line="299" lean-forward="true" selection-start-line="299" selection-end-line="299" />
+              <first_editor relative-caret-position="144">
+                <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
               </first_editor>
               <second_editor />
             </state>
@@ -54,8 +54,8 @@
         <entry file="file://$PROJECT_DIR$/usecase.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor>
-                <caret lean-forward="true" selection-end-line="82" />
+              <first_editor relative-caret-position="1247">
+                <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
               </first_editor>
               <second_editor />
             </state>
@@ -249,12 +249,12 @@
       <option name="presentableId" value="Default" />
       <updated>1531807682493</updated>
       <workItem from="1531807684201" duration="26889000" />
-      <workItem from="1533016022690" duration="74841000" />
+      <workItem from="1533016022690" duration="75245000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101730000" />
+    <option name="totallyTimeSpent" value="102134000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -395,8 +395,8 @@
     <entry file="file://$PROJECT_DIR$/usecase.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor>
-            <caret lean-forward="true" selection-end-line="82" />
+          <first_editor relative-caret-position="1247">
+            <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
           </first_editor>
           <second_editor />
         </state>
@@ -405,8 +405,8 @@
     <entry file="file://$PROJECT_DIR$/specification-schema.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="268">
-            <caret line="299" lean-forward="true" selection-start-line="299" selection-end-line="299" />
+          <first_editor relative-caret-position="144">
+            <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
           </first_editor>
           <second_editor />
         </state>
